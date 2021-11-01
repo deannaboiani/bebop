@@ -2,6 +2,7 @@
 const User = require('./User')
 const Artist = require('./Artist')
 const Post = require('./Post')
+const Show = require('./Show')
 
 
 // user has many artists, astists has many users
@@ -25,9 +26,16 @@ Artist.hasMany(Post, {
 });
 Post.belongsTo(Artist);
 
+// user has many shows
+User.hasMany(Show, {
+    onDelete:"CASCADE"
+});
+Show.belongsTo(User);
+
 
 module.exports={
     User,
     Artist,
-    Post
+    Post,
+    Show
 };

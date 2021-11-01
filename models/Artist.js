@@ -19,8 +19,8 @@ Artist.init({
         allowNull: false
         
     },
-    user_id: {
-        type:DataTypes.INTEGER,
+    favorited_by: {
+        type:DataTypes.STRING,
         references: {
             model: 'user',
             key: 'id'

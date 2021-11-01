@@ -75,19 +75,5 @@ router.delete("/:id",(req,res)=>{
         res.json(delUser)
     })
 })
-// useEffect(() => {
-    // PUT request using fetch with async/await
-//     async function updatePost() {
-//         const requestOptions = {
-//             method: 'PUT',
-//             headers: { 'Content-Type': 'application/json' },
-//             body: JSON.stringify({ title: 'React Hooks PUT Request Example' })
-//         };
-//         const response = await fetch('https://rest.bandsintown.com/artists/id_307871r/?app_id=2452bdeb25469edcb429e29c3f538ace', requestOptions);
-//         const data = await response.json();
-//         console.log(data.name);
-//     }
 
-//     updatePost();
-// }, []);
 module.exports = router;
