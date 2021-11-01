@@ -1,0 +1,9 @@
+main {
+    background-image:url('../images/mainbg.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+#small-text {
+    font-size: small;
+}
