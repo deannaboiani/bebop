@@ -35,6 +35,13 @@ User.init({
             model: 'artist',
             key: 'id'
         }
+    },
+    shows_attending: {
+        type: DataTypes.STRING,
+        references: {
+            model: 'show',
+            key: 'id'
+        }
     }
 }, 
 {

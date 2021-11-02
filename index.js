@@ -12,7 +12,7 @@ const hbs = exphbs.create({});
 
 // Requiring our models for syncing
 // const {User,Pet,Group} = require('./models');
-const routes = require("./controllers");
+// const routes = require("./controllers");
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-app.use(routes)
+// app.use(routes)
 
 sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
