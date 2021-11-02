@@ -33,7 +33,7 @@ CREATE TABLE `artists`  (
 -- ----------------------------
 -- Records of artists
 -- ----------------------------
-INSERT INTO `artists` VALUES (1, 'Taylor Alison Swift', 1, '2021-11-02 15:24:15');
+INSERT INTO `artists` VALUES (1, 'Coldplay', 1, '2021-11-02 15:24:15');
 
 -- ----------------------------
 -- Table structure for comments
@@ -53,7 +53,7 @@ CREATE TABLE `comments`  (
 -- ----------------------------
 -- Records of comments
 -- ----------------------------
-INSERT INTO `comments` VALUES (1, 'I like Taylor Alison Swift Too, her songs are very wonderful!', 1, 1, '2021-11-02 15:24:30');
+INSERT INTO `comments` VALUES (1, 'I love them!', 1, 1, '2021-11-02 15:24:30');
 
 -- ----------------------------
 -- Table structure for users
