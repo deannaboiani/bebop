@@ -27,22 +27,9 @@ User.init({
     },
     city: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        defaultValue:0
     },
-    artists_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'artist',
-            key: 'id'
-        }
-    },
-    shows_attending: {
-        type: DataTypes.STRING,
-        references: {
-            model: 'show',
-            key: 'id'
-        }
-    }
 }, 
 {
     hooks: {
