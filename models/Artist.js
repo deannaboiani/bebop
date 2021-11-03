@@ -15,17 +15,10 @@ Artist.init({
         }
     },
     image_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-        
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue:0
     },
-    favorited_by: {
-        type:DataTypes.STRING,
-        references: {
-            model: 'user',
-            key: 'id'
-        }
-    }
 },
 {
     sequelize,

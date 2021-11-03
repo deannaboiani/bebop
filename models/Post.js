@@ -6,18 +6,15 @@ class Post extends Model {}
 Post.init({
     content: {
         type:DataTypes.TEXT('tiny'),
-        allowNull:false,
     },
-    user_id: {
-        type:DataTypes.INTEGER,
-        references: {
-            model: 'user',
-            key: 'id'
+    post_date: {
+        type:DataTypes.DATE,
+        allowNull:false,
+        validate: {
+            isDate:true
         }
-    }
-},
-{
-    sequelize,
+    }},{
+    sequelize
 })
 
 module.exports = Post;

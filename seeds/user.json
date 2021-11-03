@@ -1,0 +1,15 @@
+[
+    {
+        "email":"joe@joe.joe",
+        "username":"joe",
+        "password":"password",
+        "city": "seattle"
+    },
+    {
+        "email":"shiva@joe.joe",
+        "username":"bestKitty",
+        "password":"mySisterIsTheBest",
+        "city": "seattle"
+
+    }
+]
