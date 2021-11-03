@@ -1,9 +1,32 @@
-main {
-    background-image:url('../images/mainbg.png');
-    background-repeat:no-repeat;
-    background-size:cover;
+#bgimg {
+    background-image: url('../images/mainbg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    float: none;
+    width:  100%;
+    height: 300px;
+    object-fit: cover;
 }
 
 #small-text {
     font-size: small;
+}
+
+.search-bar {
+    margin: 0 auto;
+    float: none;
+}
+
+.img-wrap {
+    position: relative;
+    background-color: seagreen;
+}
+.img-wrap .close {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    z-index: 100;
 }
