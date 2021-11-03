@@ -1,11 +1,12 @@
+const nodemailer = require ('nodemailer')
 const express = require('express');
 const router = express.Router();
-// const {User,Pet,Group} = require('../../models');
+const {User,Artist} = require('../../models');
 const bcrypt = require("bcrypt");
 
 router.get("/",(req,res)=>{
     User.findAll({
-        include:[Pet,Group]
+        include:[Artist,]
     }).then(dbUsers=>{
         if(dbUsers.length){
             res.json(dbUsers)
@@ -24,8 +25,30 @@ router.post("/",(req,res)=>{
         username:req.body.username,
         // password:encryptedPassword,
         password:req.body.password,
-        email:req.body.email
+        email:req.body.email,
+        city:req.body.city
     }).then(newUser=>{
+        let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'appbebop60@gmail.com',
+        pass: 'bebopmusic'
+    }
+});
+let mailOptions = {
+    from: 'appbebop60@gmail.com',
+    to: req.body.email,
+    subject: `Welcome to Bebop, ${req.body.username}!`,
+    text: `Bebop is a social network tool that brings live music lovers closer than ever! There are several artists coming to ${req.body.city} in the upcoming months. To see where your favorite artists are playing next, click on their image on your profile page. This will bring you to their page where you can interact with other users and plan upcoming shows! See what other artists users listen to by going to their profile. Who knows, you might find your next new favorite artist!`
+};
+transporter.sendMail(mailOptions, function(err,data){
+    if(err) {
+        console.log(err)
+    } else {
+        console.log('email sent')
+    }
+
+})
         res.json(newUser);
     }).catch(err=>{
         console.log(err);
