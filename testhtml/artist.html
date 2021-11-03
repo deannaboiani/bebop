@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bebop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-1 text-info" href="#">bebop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item navlink">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item navlink">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item navlink">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-info" id="navbtn" type="submit">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <main class="d-flex justify-content-center flex-column py-3 bg-dark text-light">
+        <div class="d-flex justify-content-center pt-5">
+            <h5 class="fs-1 fw-bold">Leon Bridges</h5>
+        </div>
+        <div class="w-75 search-bar">
+            <div class="p-5">
+                <a href="ARTIST FROM TABLE">
+                    <img class="artist-img" src="../public/images/leonbridges.jpg" alt="artist">
+                </a>
+            </div>
+        </div>
+        <div class="d-flex flex-column justify-content-center my-3 p-5">
+            <div class="w-100 fw-bold fs-2 text-center text-light mb-3">Upcoming Shows:</div>
+            <div class="w-100">
+                <div class="d-flex flex-row align-items-center justify-content-center">
+                    <p class="pt-3 pe-5">11/2 Austin, TX</p>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                            checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Going</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column justify-content-center p-5 text-dark text-center w-75 search-bar">
+            <div class="w-100 fw-bold fs-2 text-center text-light mb-3">Comments:</div>
+            <div class="m-5">
+                <div class="w-100 search-bar">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Say something!" aria-label="Artist search"
+                            aria-describedby="button-addon2">
+                        <button class="btn-dark btn-outline-info" type="button" id="button-addon2"><span
+                                class="text-light">Post</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-light mb-5">
+                <div class="card-header">2021/11/3 10:54:47</div>
+                <div class="card-body">
+                    <h5 class="card-title p-2">dimitermusic says:</h5>
+                    <p class="card-text p-2">Saw him at Red Rocks in Denver last night and his voice is like food for
+                        the
+                        soul...Who's going to the NY show?</p>
+                </div>
+            </div>
+            <div class="card bg-light mb-5">
+                <div class="card-header">2021/11/3 12:48:36</div>
+                <div class="card-body">
+                    <h5 class="card-title p-2">deAnnaB says:</h5>
+                    <p class="card-text p-2">I'm so there!</p>
+                </div>
+            </div>
+            <div class="card bg-light mb-5">
+                <div class="card-header">2021/11/4 09:31:22</div>
+                <div class="card-body">
+                    <h5 class="card-title p-2">Lindafan says:</h5>
+                    <p class="card-text p-2">Can't wait. I heard both shows are sold out. So glad I got my tix early!
+                    </p>
+                </div>
+            </div>
+            <div class="card bg-light mb-5">
+                <div class="card-header">2021/11/4 22:39:06</div>
+                <div class="card-body">
+                    <h5 class="card-title p-2">vitaliyt says:</h5>
+                    <p class="card-text p-2">I will be seeing him in San Diego 🌞</p>
+                </div>
+            </div>
+            <div class="card bg-light mb-5">
+                <div class="card-header">2021/11/4 24:44:55</div>
+                <div class="card-body">
+                    <h5 class="card-title p-2">joerehfuss says:</h5>
+                    <p class="card-text p-2">Get back to work.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
