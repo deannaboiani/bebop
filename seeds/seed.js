@@ -7,10 +7,10 @@ const userData = require("./user.json")
 
 const seedMe = async ()=>{
     await sequelize.sync({force:true});
-    const artist = await Artist.bulkCreate(artistData);
-    console.log('seeded artists!')
     const user = await User.bulkCreate(userData);
     console.log('seeded users!')
+    const artist = await Artist.bulkCreate(artistData);
+    console.log('seeded artists!')
     const post = await Post.bulkCreate(postData);
     console.log('seeded posts!')
     const show = await Show.bulkCreate(showData);
