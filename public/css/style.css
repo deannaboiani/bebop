@@ -1,0 +1,31 @@
+#bgimg {
+    background-image: url('../images/mainbg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile-img {
+    float: none;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+#small-text {
+    font-size: small;
+}
+
+.search-bar {
+    margin: 0 auto;
+    float: none;
+}
+
+.artist-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+    border-radius: 5px;
+}
