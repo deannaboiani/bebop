@@ -1,7 +1,8 @@
 const sequelize = require("../config/connection")
-const {Artist,Post,User} = require("../models")
+const {Artist,Post,Show,User} = require("../models")
 const artistData = require("./artist.json")
 const postData = require("./post.json")
+const showData = require("./show.json")
 const userData = require("./user.json")
 
 const seedMe = async ()=>{
@@ -12,6 +13,8 @@ const seedMe = async ()=>{
     console.log('seeded users!')
     const post = await Post.bulkCreate(postData);
     console.log('seeded posts!')
+    const show = await Show.bulkCreate(showData);
+    console.log('seeded shows!')
    
     process.exit(0);
 }
