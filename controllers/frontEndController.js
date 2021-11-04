@@ -4,7 +4,18 @@ const {User,Artist,Post,Show}  = require("../models")
 
 router.get('/',(req,res)=>{
     return res.render("home")
-})
+});
+
+// app.get("/", function (req, res) {
+//     res.render("home",);
+//   });
+  router.get("/signup", function (req, res) {
+    res.render("signup");
+  });
+  router.get("/login", function (req, res) {
+    res.render("login");
+  });
+
 
 // router.get("/artists",(req,res)=>{
 //     Artist.findAll().then(artistData=>{
