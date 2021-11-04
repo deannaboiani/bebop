@@ -1,7 +1,9 @@
 [
     {
         "content":"They are the best!!!",
-        "post_date": "01/01/2022"
+        "post_date": "01/01/2022",
+        "ArtistId": 1,
+        "UserId": 2
     },
     {
         "content":"no doubt",
