@@ -8,7 +8,7 @@ Post.init({
         type:DataTypes.TEXT('tiny'),
     },
     post_date: {
-        type:DataTypes.DATE,
+        type:DataTypes.DATEONLY,
         allowNull:false,
         validate: {
             isDate:true

@@ -19,13 +19,13 @@ app.set('view engine', 'handlebars');
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
-    res.render("home", { layout: false });
+    res.render("home",);
   });
   app.get("/signup", function (req, res) {
-    res.render("signup", { layout: false });
+    res.render("signup");
   });
   app.get("/login", function (req, res) {
-    res.render("login", { layout: false });
+    res.render("login");
   });
 
 // Sets up the Express app to handle data parsing
@@ -45,9 +45,7 @@ app.use(session({
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// 
 
-  // nodemailer****
 
 app.use(routes)
 
