@@ -32,7 +32,7 @@ router.get("/artists/:id",(req,res)=>{
         include:[{
             model:Post,
             include:[User]
-        }]
+        },User]
     }).then(artistData=>{
         const hbsData = artistData.get({plain:true})
         console.log(hbsData);

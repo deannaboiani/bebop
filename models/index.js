@@ -11,8 +11,6 @@ User.belongsToMany(Artist, {
 });
 
 Artist.belongsToMany(User, {
-    // as: "favorited_by",
-    // as: "top_six",
     through: "UserArtist"
 });
 
