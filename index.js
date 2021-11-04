@@ -18,6 +18,15 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.static("public"));
 
+app.get("/", function (req, res) {
+    res.render("home", { layout: false });
+  });
+  app.get("/signup", function (req, res) {
+    res.render("signup", { layout: false });
+  });
+  app.get("/login", function (req, res) {
+    res.render("login", { layout: false });
+  });
 
 // Sets up the Express app to handle data parsing
 
