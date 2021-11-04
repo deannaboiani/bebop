@@ -2,32 +2,38 @@
     {
         "artist_name":"Coldplay",
         "image_id": "https://photos.bandsintown.com/thumb/8880255.jpeg",
-        "shows": "January 2, 2021"
+        "shows": "January 2, 2021",
+        "favorited_by": 1
     },
     {
         "artist_name":"Kacey Musgraves",
         "image_id": "https://photos.bandsintown.com/thumb/11680151.jpeg",
-        "shows": "January 2, 2021"
+        "shows": "January 2, 2021",
+        "favorited_by": 1
     },
     {
         "artist_name":"Lennon Stella",
         "image_id": "https://photos.bandsintown.com/thumb/11185477.jpeg",
-        "shows": "January 2, 2021"
+        "shows": "January 2, 2021",
+        "favorited_by": 1
     },
     {
         "artist_name":"Leon Bridges",
         "image_id": "https://photos.bandsintown.com/thumb/11705109.jpeg",
-        "shows": "January 2, 2021"
+        "shows": "January 2, 2021",
+        "favorited_by": 1
     },
     {
         "artist_name":"Shaky Graves",
         "image_id": "https://photos.bandsintown.com/thumb/11084210.jpeg",
-        "shows": "January 2, 2021"
+        "shows": "January 2, 2021",
+        "favorited_by": 1
     },
     {
         "artist_name":"The 1975",
         "image_id": "https://photos.bandsintown.com/thumb/10018425.jpeg",
-        "shows": "January 2, 2021"
+        "shows": "January 2, 2021",
+        "favorited_by": 1
     }
    
 ]
