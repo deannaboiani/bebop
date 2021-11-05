@@ -7,7 +7,7 @@ router.get("/",(req,res)=>{
         if(dbPost.length){
             res.json(dbPost)
         } else {
-            res.status(404).json({message:"No post found!"})
+            res.status(404).json({message:"No post yet!"})
         }
     }).catch(err=>{
         console.log(err);
