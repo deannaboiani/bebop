@@ -1,10 +1,39 @@
-
 <main class="d-flex justify-content-center flex-column py-3 bg-dark text-light">
-    <div class="d-flex justify-content-center pt-5">
+    <div class="d-flex justify-content-center align-items-center pt-5">
         <h5 class="fs-1 fw-bold">{{artist_name}}</h5>
+        <div class="ms-4">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-info text-light btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#favoritedByModal">
+                Favorited By
+            </button>
+            <!-- Modal -->
+            <div class="modal fade text-dark" id="favoritedByModal" tabindex="-1"
+                aria-labelledby="favoritedByModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Favorited By</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                                {{#each Users}}
+                            <ul class="list-unstyled">
+                                <li><a href="/users/{{id}}">{{username}}</a></li>
+                            </ul>
+                                {{/each}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="w-75 search-bar">
-        <div class="p-5">
+  
+    <div class="w-75 search-bar py-5">
+        <div>
             <a href="#">
                 <img class="artist-img" src="{{image_id}}" alt="artist">
             </a>
@@ -22,7 +51,7 @@
             </div>
         </div>
     </div>
-    <div class="d-flex flex-column justify-content-center p-5 text-dark text-center w-75 search-bar">
+    <div class="d-flex flex-column justify-content-center py-5 text-dark text-center w-75 search-bar">
         <div class="w-100 fw-bold fs-2 text-center text-light mb-3">Comments:</div>
         <div class="m-5">
             <div class="w-100 search-bar">
@@ -35,15 +64,20 @@
             </div>
         </div>
 
-        
+
         <div class="card bg-light mb-5">
-        {{#each Posts}}
-            <div class="card-header">{{post_date}}</div>
+            {{#each Posts}}
+            <div class="card-header">{{post_date}}
+                {{#if }}
+                <button class="btn-light btn-outline-info" type="button" id="edit-button"><span
+                    class="text-dark">Edit</span></button></div>
             <div class="card-body">
                 <h5 class="card-title p-2">{{User.username}} says:</h5>
                 <p class="card-text p-2">{{content}}</p>
             </div>
-        {{/each}}
+            {{/each}}
+
+
         </div>
 </main>
 

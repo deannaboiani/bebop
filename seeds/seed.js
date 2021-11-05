@@ -15,7 +15,10 @@ const seedMe = async ()=>{
     console.log('seeded posts!')
     const show = await Show.bulkCreate(showData);
     console.log('seeded shows!')
-   
+    const favorite =  await User.findByPk(1);
+    console.log(favorite);
+    await favorite.addArtist(1)
+
     process.exit(0);
 }
 
