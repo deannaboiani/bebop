@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 
 router.get("/",(req,res)=>{
     User.findAll({
-        include:[Artist,]
+        include:[Artist]
     }).then(dbUsers=>{
         if(dbUsers.length){
             res.json(dbUsers)
