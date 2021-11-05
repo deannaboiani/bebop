@@ -15,7 +15,7 @@
     font-size: small;
 }
 
-.search-bar {
+.center {
     margin: 0 auto;
     float: none;
 }
@@ -28,4 +28,67 @@
     height: 400px;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.artist-card {
+    position: relative;
+}
+
+.artist-card h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    font-size: 28px;
+    padding: 2%;
+    cursor: pointer;
+    display: none;
+}
+
+.artist-card:hover h1 {
+    display: block;
+}
+
+.artist-card {
+    background-color: black;
+}
+
+.artist-card:hover .profile-img {
+    opacity: .5;
+}
+
+.artist-card .remove-icon {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    padding: 2%;
+    opacity: .6;
+    color: red;
+    font-size: 12px;
+    cursor: pointer;
+    display: none;
+}
+
+.artist-card:hover .remove-icon {
+    display: block;
+}
+
+.remove-icon:hover {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 375px) {
+    .artist-card .remove-icon {
+        display: block;
+        font-size: 24px;
+        padding: 5%;
+    }
+    .artist-card .profile-img {
+        opacity: .5;
+    }
+    .artist-card h1 {
+        display: block;
+    }
 }
