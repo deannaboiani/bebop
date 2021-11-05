@@ -18,6 +18,9 @@ const seedMe = async ()=>{
     const favorite =  await User.findByPk(1);
     console.log(favorite);
     await favorite.addArtist(1)
+    const topsix = await Artist.findByPk(1);
+    console.log(topsix);
+    await topsix.addUser(1)
 
     process.exit(0);
 }
