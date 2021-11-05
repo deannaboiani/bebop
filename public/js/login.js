@@ -9,6 +9,9 @@ loginForm.addEventListener("submit",(e)=>{
         email:document.querySelector("#email").value,
         password:document.querySelector("#password").value,
     }
+
+    console.log("here");
+
     fetch("/api/users/login",{
         method:"POST",
         body:JSON.stringify(userObj),
@@ -17,7 +20,7 @@ loginForm.addEventListener("submit",(e)=>{
         }
     }).then(res=>{
         if(res.ok){
-           location.href = "/profile"
+           location.href = "/profile/1";
         } else {
             alert("trumpet sound")
         }
