@@ -41,8 +41,6 @@ router.get("/artists/:id",(req,res)=>{
         res.render("artist",hbsData);
     })
 })
-
-
-
+s
 
 module.exports = router;
