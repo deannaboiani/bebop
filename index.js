@@ -45,9 +45,7 @@ app.use(session({
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// 
 
-  // nodemailer****
 
 app.use(routes)
 

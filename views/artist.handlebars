@@ -1,11 +1,12 @@
+
 <main class="d-flex justify-content-center flex-column py-3 bg-dark text-light">
     <div class="d-flex justify-content-center pt-5">
-        <h5 class="fs-1 fw-bold">Leon Bridges</h5>
+        <h5 class="fs-1 fw-bold">{{artist_name}}</h5>
     </div>
     <div class="w-75 search-bar">
         <div class="p-5">
-            <a href="ARTIST FROM TABLE">
-                <img class="artist-img" src="../public/images/leonbridges.jpg" alt="artist">
+            <a href="#">
+                <img class="artist-img" src="{{image_id}}" alt="artist">
             </a>
         </div>
     </div>
@@ -13,7 +14,7 @@
         <div class="w-100 fw-bold fs-2 text-center text-light mb-3">Upcoming Shows:</div>
         <div class="w-100">
             <div class="d-flex flex-row align-items-center justify-content-center">
-                <p class="pt-3 pe-5">11/2 Austin, TX</p>
+                <p class="pt-3 pe-5">{{shows}}</p>
                 <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Going</label>
@@ -25,7 +26,7 @@
         <div class="w-100 fw-bold fs-2 text-center text-light mb-3">Comments:</div>
         <div class="m-5">
             <div class="w-100 search-bar">
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" id="add-post">
                     <input type="text" class="form-control" placeholder="Say something!" aria-label="Artist search"
                         aria-describedby="button-addon2">
                     <button class="btn-dark btn-outline-info" type="button" id="button-addon2"><span
@@ -33,43 +34,18 @@
                 </div>
             </div>
         </div>
+
+        
         <div class="card bg-light mb-5">
-            <div class="card-header">2021/11/3 10:54:47</div>
+        {{#each Posts}}
+            <div class="card-header">{{post_date}}</div>
             <div class="card-body">
-                <h5 class="card-title p-2">dimitermusic says:</h5>
-                <p class="card-text p-2">Saw him at Red Rocks in Denver last night and his voice is like food for
-                    the
-                    soul...Who's going to the NY show?</p>
+                <h5 class="card-title p-2">{{User.username}} says:</h5>
+                <p class="card-text p-2">{{content}}</p>
             </div>
+        {{/each}}
         </div>
-        <div class="card bg-light mb-5">
-            <div class="card-header">2021/11/3 12:48:36</div>
-            <div class="card-body">
-                <h5 class="card-title p-2">deAnnaB says:</h5>
-                <p class="card-text p-2">I'm so there!</p>
-            </div>
-        </div>
-        <div class="card bg-light mb-5">
-            <div class="card-header">2021/11/4 09:31:22</div>
-            <div class="card-body">
-                <h5 class="card-title p-2">Lindafan says:</h5>
-                <p class="card-text p-2">Can't wait. I heard both shows are sold out. So glad I got my tix early!
-                </p>
-            </div>
-        </div>
-        <div class="card bg-light mb-5">
-            <div class="card-header">2021/11/4 22:39:06</div>
-            <div class="card-body">
-                <h5 class="card-title p-2">vitaliyt says:</h5>
-                <p class="card-text p-2">I will be seeing him in San Diego 🌞</p>
-            </div>
-        </div>
-        <div class="card bg-light mb-5">
-            <div class="card-header">2021/11/4 24:44:55</div>
-            <div class="card-body">
-                <h5 class="card-title p-2">joerehfuss says:</h5>
-                <p class="card-text p-2">Get back to work.</p>
-            </div>
-        </div>
-    </div>
 </main>
+
+
+<script src="/js/addPost.js"></script>

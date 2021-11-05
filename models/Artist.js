@@ -9,7 +9,7 @@ Artist.init({
         allowNull:false,
     },
     shows: {
-        type:DataTypes.DATE,
+        type:DataTypes.DATEONLY,
         validate: {
             isDate:true
         }
