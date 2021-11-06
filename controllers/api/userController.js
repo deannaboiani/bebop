@@ -86,7 +86,7 @@ router.post("/login",(req,res)=>{
 
 router.get("/logout",(req,res)=>{
     req.session.destroy();
-    res.redirect("/login")
+    res.redirect("/")
 })
 
 router.delete("/:id",(req,res)=>{
