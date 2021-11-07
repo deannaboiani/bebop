@@ -2,14 +2,14 @@
     {
         "email":"joe@joe.joe",
         "username":"joe",
-        "password":"password",
-        "city": "seattle"
+        "password":"password"
+        
     },
     {
         "email":"shiva@joe.joe",
         "username":"bestKitty",
-        "password":"mySisterIsTheBest",
-        "city": "seattle"
+        "password":"mySisterIsTheBest"
+        
 
     }
 ]

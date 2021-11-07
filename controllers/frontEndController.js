@@ -6,22 +6,34 @@ router.get('/',(req,res)=>{
     return res.render("home")
 });
 
-router.get("/signup", function (req, res) {
-    res.render("signup");
-});
+router.get("/signup",(req,res)=>{
+    // if(req.session.user){
+    //     return res.redirect(`/profile/${req.session.user.id}`)
+    // }
+   return  res.render("signup")
+})
 
-router.get("/login", function (req, res) {
-    res.render("login");
-});
 
-router.get("/profiles/:id", (req, res) => {
+router.get("/login",(req,res)=>{
+    if(req.session.user){
+        return res.redirect(`/profile/${req.session.user.id}`)
+    }
+   return  res.render("login")
+})
+
+router.get("/logout", (req, res) => {
+    req.session.destroy();
+    res.redirect("/login")
+})
+
+router.get("/profile/:id", (req, res) => {
     User.findByPk(req.params.id,{
         include:[{
             model:Show,
             include:[Artist]
         },Artist]
-    }).then(artistData=>{
-        const hbsData = artistData.get({plain:true})
+    }).then(userData=>{
+        const hbsData = userData.get({plain:true})
         console.log(hbsData);
         res.render("profile",hbsData);
     })
@@ -51,6 +63,5 @@ router.get("/artists/:id",(req,res)=>{
         console.log(hbsData);
         res.render("artist",hbsData);
     })
-})
-
+});
 module.exports = router;
