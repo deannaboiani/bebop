@@ -23,4 +23,8 @@ router.post("/", (req, res) => {
     });
 });
 
+<<<<<<< HEAD
 module.exports=router;
+=======
+module.exports = router;
+>>>>>>> dev
