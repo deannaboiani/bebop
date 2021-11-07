@@ -15,11 +15,25 @@ const seedMe = async ()=>{
     console.log('seeded posts!')
     const show = await Show.bulkCreate(showData);
     console.log('seeded shows!')
-    const favorite =  await User.findByPk(1);
-    console.log(favorite);
-    await favorite.addArtist(1)
+
+    // const favorite =  await User.findByPk(1);
+    // console.log(favorite);
+    // await favorite.addArtist(1);
+
+    for(let i = 0; i < 6; i++) {
+        await junctionHelper(1, i);
+    }
+
+    const topsix = await Artist.findByPk(1);
+    console.log(topsix);
+    await topsix.addUser(1)
 
     process.exit(0);
+}
+
+const junctionHelper = async (user, artist) => {
+    const favorite = await User.findByPk(user);
+    await favorite.addArtist(artist);
 }
 
 seedMe()
