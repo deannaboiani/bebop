@@ -1,7 +1,8 @@
 document.querySelector("#add-post").addEventListener("submit",evt=>{
     evt.preventDefault();
+    console.log(evt)
     const fetchObj = {
-        UserID:document.querySelector("#user-id").value,
+        // UserID:document.querySelector("#user-id").value,
         ArtistId:document.querySelector("#artist-id").value,
         content:document.querySelector("#content").value,
     }
@@ -14,7 +15,7 @@ document.querySelector("#add-post").addEventListener("submit",evt=>{
         }
     }).then(res=>{
         if(res.ok){
-           location.href="/"
+           location.href="/artists/{{id}}"
         } else {
             alert("trumpet sound")
         }

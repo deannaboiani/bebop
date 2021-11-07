@@ -57,11 +57,11 @@
         <div class="m-5">
             <div class="w-100 search-bar">
                 <div class="input-group mb-3">
-                    <input type="hidden" id="user-id" value={{User.id}}>
-                    <input type="hidden" id="user-id" value={{Artist.id}}>
+                    {{!-- <input type="hidden" id="user-id" value={{User.id}}> --}}
+                    <input type="hidden" id="artist-id" value={{ArtistId}}> 
                     <input type="text" id="content" class="form-control" placeholder="Say something!" aria-label="Artist search"
                         aria-describedby="button-addon2">
-                    <button class="btn-dark btn-outline-info" type="button"><span
+                    <button class="btn-dark btn-outline-info" type="submit"><span
                             class="text-light">Post</span></button>
                 </div>
             </div>
