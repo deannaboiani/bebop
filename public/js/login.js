@@ -20,7 +20,7 @@ loginForm.addEventListener("submit",(e)=>{
         }
     }).then(res=>{
         if(res.ok){
-           location.href = "/profile/1";
+           location.href = "/profiles/1";
         } else {
             alert("trumpet sound")
         }
