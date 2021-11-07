@@ -6,11 +6,9 @@ const loginForm = document.querySelector("#login-form");
 loginForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     const userObj={
-        email:document.querySelector("#email").value,
-        password:document.querySelector("#password").value,
+        email:document.querySelector("#exampleInputEmail1").value,
+        password:document.querySelector("#exampleInputPassword1").value,
     }
-
-    console.log("here");
 
     fetch("/api/users/login",{
         method:"POST",
@@ -19,10 +17,12 @@ loginForm.addEventListener("submit",(e)=>{
             "Content-Type":"application/json"
         }
     }).then(res=>{
-        if(res.ok){
-           location.href = "/profiles/1";
+        if(!res.ok){
+            alert("incorrect login")
         } else {
-            alert("trumpet sound")
+            res.json().then(data=>{
+                location.href = `/profile/${data.id}`
+            })
         }
     })
 })
