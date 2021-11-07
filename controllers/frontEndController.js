@@ -6,13 +6,26 @@ router.get('/',(req,res)=>{
     return res.render("home")
 });
 
-
-  router.get("/signup", function (req, res) {
+router.get("/signup", function (req, res) {
     res.render("signup");
-  });
-  router.get("/login", function (req, res) {
+});
+
+router.get("/login", function (req, res) {
     res.render("login");
-  });
+});
+
+router.get("/profiles/:id", (req, res) => {
+    User.findByPk(req.params.id,{
+        include:[{
+            model:Show,
+            include:[Artist]
+        },Artist]
+    }).then(artistData=>{
+        const hbsData = artistData.get({plain:true})
+        console.log(hbsData);
+        res.render("profile",hbsData);
+    })
+});
 
 
 router.get("/artists",(req,res)=>{
@@ -39,6 +52,5 @@ router.get("/artists/:id",(req,res)=>{
         res.render("artist",hbsData);
     })
 })
-s
 
 module.exports = router;

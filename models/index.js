@@ -14,6 +14,12 @@ Artist.belongsToMany(User, {
     through: "UserArtist"
 });
 
+Artist.hasMany(Show, {
+    onDelete:"CASCADE"
+});
+Show.belongsTo(Artist);
+
+
 // post has one user
 User.hasMany(Post, {
     onDelete:"CASCADE"
