@@ -26,7 +26,9 @@ const getArtist = async (name) => {
 // Method that returns a list of locations and times that an artist will be performing
 const getEvents = async (name) => {
     try {
-        const resp = await axios.get("https://rest.bandsintown.com/artists/" + name + "/events/?app_id=" + API_KEY);
+        const url = "https://rest.bandsintown.com/artists/" + name + "/events/?app_id=" + API_KEY;
+
+        const resp = await axios.get(url);
         let data = resp.data;
         let result = [];
 
@@ -38,7 +40,9 @@ const getEvents = async (name) => {
             });
         });
 
-        return result.slice(0, 3);
+        const evts = result.slice(0, 3);
+
+        return evts;
     } catch (err) {
         console.log(err);
     }

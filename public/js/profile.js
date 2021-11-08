@@ -26,6 +26,20 @@ addBtn.addEventListener("click", (e) => {
             alert("Failed to search artist, try again!")
         }
     });
+
+    fetch("/artists/shows", {
+        method: "POST",
+        body: JSON.stringify(fetchObj),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(res => {
+        if(res.ok) {
+            location.href="/login"
+        } else {
+            alert("Failed to search events, try again!")
+        }
+    });
 });
 
 // TODO: if the user input in addArtist does not match database, alert "try another artist!" or something.
