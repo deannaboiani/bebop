@@ -1,15 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const userController = require("./api/userController")
-
-// const apiRoutes = require('./api')
+const apiRoutes = require('./api')
+router.use("/api", apiRoutes);
 
 const frontEndRoutes = require('./frontEndController')
+router.use("/", frontEndRoutes);
 
-
-// router.use("/api",apiRoutes)
-router.use("/",frontEndRoutes)
 router.get("/sessions",(req,res)=>{
     res.json(req.session)
 })

@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const user = require('./User');
 const sequelize = require('../config/connection');
 
 class Artist extends Model {}
@@ -8,17 +9,11 @@ Artist.init({
         type:DataTypes.STRING,
         allowNull:false,
     },
-    shows: {
-        type:DataTypes.DATEONLY,
-        validate: {
-            isDate:true
-        }
-    },
     image_id: {
         type: DataTypes.STRING,
         allowNull: false,
         defaultValue:0
-    },
+    }
 },
 {
     sequelize,

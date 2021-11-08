@@ -1,37 +1,37 @@
 [
 {
     "show_date":"January 2, 2021",
-    "show_artist":"Coldplay",
+    "show_venue":"Coldplay",
     "show_location":"Seattle"
    
 },
 {
     "show_date":"January 2, 2021",
-    "show_artist":"Kacey Musgraves",
+    "show_venue":"Kacey Musgraves",
     "show_location":"Seattle"
    
 },
 {
     "show_date":"January 2, 2021",
-    "show_artist":"Lennon Stella",
+    "show_venue":"Lennon Stella",
     "show_location":"Seattle"
    
 },
 {
     "show_date":"January 2, 2021",
-    "show_artist":"Leon Bridges",
+    "show_venue":"Leon Bridges",
     "show_location":"Seattle"
    
 },
 {
     "show_date":"January 2, 2021",
-    "show_artist":"Shaky Graves",
+    "show_venue":"Shaky Graves",
     "show_location":"Seattle"
    
 },
 {
     "show_date":"January 2, 2021",
-    "show_artist":"The 1975",
+    "show_venue":"The 1975",
     "show_location":"Seattle"
    
 }
