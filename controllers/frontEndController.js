@@ -21,6 +21,14 @@ router.get("/login",(req,res)=>{
    return  res.render("login")
 })
 
+
+router.get("/profile",(req,res)=>{
+    if(req.session.user){
+        return res.redirect(`/profile/${req.session.user.id}`)
+    }
+   return  res.render("login")
+})
+
 router.get("/logout", (req, res) => {
     req.session.destroy();
     res.redirect("/login")
