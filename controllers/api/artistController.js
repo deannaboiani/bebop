@@ -30,6 +30,15 @@ router.post("/",(req,res)=>{
     })
 })
 
-
+router.delete('/delete', async (req, res, next) => {
+    let artist = await Artist.findOne({where: {id: req.params.artistId}}).catch(e => {
+       console.log(e.message)
+    })
+    if (!artist){
+      console.log("err");
+    }
+    artist.destroy();
+    res.console.log("deleted");
+  });
 
 module.exports = router;
