@@ -20,12 +20,11 @@ router.get("/login", (req, res) => {
   return res.render("login");
 });
 
-
-router.get("/profile",(req,res)=>{
-    if(req.session.user){
+router.get("/profile", (req, res) => {
+    if (req.session.user) {
         return res.redirect(`/profile/${req.session.user.id}`)
     }
-   return  res.render("login")
+    return res.render("login")
 })
 
 router.get("/logout", (req, res) => {
@@ -61,6 +60,7 @@ router.get("/artists", (req, res) => {
   });
 });
 
+<<<<<<< HEAD
 router.get("/artists/:id", (req, res) => {
   Artist.findByPk(req.params.id, {
     include: [
@@ -80,5 +80,30 @@ router.get("/artists/:id", (req, res) => {
     console.log(hbsData);
     res.render("artist", hbsData);
   });
+=======
+router.get("/artists", (req, res) => {
+    Artist.findAll().then(artistData => {
+        console.log(artistData)
+        console.log("=================")
+        const hbsAData = artistData.map(item => item.get({ plain: true }))
+        console.log(hbsAData)
+        return res.render("artists/", {
+            flavors: hbsAData
+        })
+    })
+})
+
+router.get("/artists/:id", (req, res) => {
+    Artist.findByPk(req.params.id, {
+        include: [{
+            model: Post,
+            include: [User]
+        }, User]
+    }).then(artistData => {
+        const hbsData = artistData.get({ plain: true })
+        console.log(hbsData);
+        res.render("artist", hbsData);
+    })
+>>>>>>> dev
 });
 module.exports = router;
