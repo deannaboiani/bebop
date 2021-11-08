@@ -19,7 +19,7 @@ signupForm.addEventListener("submit",(e)=>{
         }
     }).then(res=>{
         if(!res.ok){
-            return alert("trumpet sound")
+            return alert("form was filled incorrectly")
         } else {
             res.json().then(data=>{
                 location.href = `/profile/${data.id}`

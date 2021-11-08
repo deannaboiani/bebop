@@ -28,4 +28,9 @@ router.get("/:id", (req, res) => {
     });
 });
 
+
+// if artist name == name from api, fetch name, image, upcoming shows(date and location)
+// seeded to db --- top six column in user has value of artist 
+
+
 module.exports = router;

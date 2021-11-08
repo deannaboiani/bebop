@@ -17,7 +17,7 @@ document.querySelector("#add-post").addEventListener("submit",evt=>{
         if(res.ok){
            location.href="/artists/{{id}}"
         } else {
-            alert("trumpet sound")
+            alert("something went wrong")
         }
     })
 })

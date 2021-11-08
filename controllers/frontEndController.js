@@ -7,9 +7,6 @@ router.get('/',(req,res)=>{
 });
 
 router.get("/signup",(req,res)=>{
-    // if(req.session.user){
-    //     return res.redirect(`/profile/${req.session.user.id}`)
-    // }
    return  res.render("signup")
 })
 
@@ -18,7 +15,14 @@ router.get("/login",(req,res)=>{
     if(req.session.user){
         return res.redirect(`/profile/${req.session.user.id}`)
     }
-   return  res.render("login")
+   return res.render("login")
+})
+
+router.get("/profile",(req,res)=>{
+    if(req.session.user){
+        return res.redirect(`/profile/${req.session.user.id}`)
+    }
+   return res.render("login")
 })
 
 router.get("/logout", (req, res) => {
@@ -47,7 +51,7 @@ router.get("/artists",(req,res)=>{
         const hbsAData = artistData.map(item=>item.get({plain:true}))
         console.log(hbsAData)
         return res.render("artists/",{
-            flavors:hbsAData
+            artist:hbsAData
         })
     })
 })
