@@ -13,9 +13,11 @@
     <div class="d-flex flex-column justify-content-center my-3 p-5">
         <div class="w-100 fw-bold fs-2 text-center text-light mb-3">Upcoming Shows:</div>
         <div class="w-100">
-            <div class="d-flex flex-row align-items-center justify-content-center">
+            <div class="d-flex flex-column align-items-center justify-content-center">
                 {{#each Shows}}
-                <p class="pt-3 pe-5">{{show_date}} {{show_location}} {{show_venue}}</p>
+                <div class="pt-3 pe-5">
+                    <p>{{show_date}} - {{show_venue}} - {{show_location}}</p>
+                </div>
                 {{/each}}
             </div>
         </div>
