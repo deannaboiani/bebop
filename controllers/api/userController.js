@@ -95,12 +95,11 @@ router.post("/login",(req,res)=>{
         res.status(500).json(err);
     })
 })
-  
 
 
 router.get("/logout", (req, res) => {
     req.session.destroy();
-    res.redirect("/login")
+    res.redirect("/")
 })
 
 router.delete("/:id", (req, res) => {

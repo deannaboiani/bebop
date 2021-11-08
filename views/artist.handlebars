@@ -58,10 +58,10 @@
             <div class="w-100 search-bar">
                 <div class="input-group mb-3">
                     <input type="hidden" id="user-id" value={{User.id}}>
-                    <input type="hidden" id="user-id" value={{Artist.id}}>
+                    <input type="hidden" id="artist-id" value={{id}}>
                     <input type="text" id="content" class="form-control" placeholder="Say something!" aria-label="Artist search"
                         aria-describedby="button-addon2">
-                    <button class="btn-dark btn-outline-info" type="button"><span
+                    <button  class="btn-dark btn-outline-info" type="submit"><span
                             class="text-light">Post</span></button>
                 </div>
             </div>
@@ -75,6 +75,10 @@
             <div class="card-body">
                 <h5 class="card-title p-2">{{User.username}} says:</h5>
                 <p class="card-text p-2">{{content}}</p>
+                {{#if canDelete}}
+                    <button id="delete-post">Delete</button>
+                    <input type="hidden" id="postID" value={{id}}/>
+                {{/if}}
             </div>
             {{/each}}
         </div>
@@ -82,3 +86,4 @@
 
 
 <script src="/js/addPost.js"></script>
+<script src="/js/deletePost.js"></script>
