@@ -1,6 +1,6 @@
 <main class="d-flex flex-column p-1 bg-info">
     <div class="d-flex justify-content-end">
-        <h5 class="fs-5 mt-2 px-4 mb-4">Welcome <span class="text-light fst-italic">{{User.username}}</span>!</h5>
+        <h5 class="fs-5 mt-2 px-4 mb-4">Welcome <span class="text-light fst-italic">{{username}}</span>!</h5>
     </div>
     <div>
         <div class="d-flex justify-content-center">
@@ -16,12 +16,12 @@
         </div>
     </div>
     <div class="row g-0 m-5">
-        {{#each UserArtist.artist_id}}
+        {{#each Artists}}
         <div class="col-md-4 p-2">
             <div class="artist-card">
-                <a href="/artists/{{artist_id}}">
-                    <img class="profile-img" src={{Artist.image_id}} alt="artist">
-                    <h1>{{Artist.artist_name}}</h1>
+                <a href="/artists/{{id}}">
+                    <img class="profile-img" src={{image_id}} alt="artist">
+                    <h1>{{artist_name}}</h1>
                 </a>
                 <span class="remove-icon">&#10060;</span>
             </div>
@@ -34,10 +34,12 @@
                 Shows I am going to:
             </div>
             <ul class="list-group list-group-flush">
-                {{#each}}
-                <li class="list-group-item p-3">{{Artist.artist_name}} {{Artist.shows}}</li>
+                {{#each Artists}}
+                <li class="list-group-item p-3">{{artist_name}} {{show_location}} {{show_date}}</li>
                 {{/each}}
             </ul>
         </div>
     </div>
 </main>
+
+{{!-- <script src="/js/logout.js"></script> --}}

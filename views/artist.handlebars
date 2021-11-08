@@ -53,37 +53,37 @@
     </div>
     <div class="d-flex flex-column justify-content-center py-5 text-dark text-center w-75 center">
         <div class="w-100 fw-bold fs-2 text-center text-light mb-3">Comments:</div>
+                    <form id="add-post">
         <div class="m-5">
-            <div class="w-100 center">
-                <div class="input-group mb-3" id="add-post">
-                    <input type="text" class="form-control" placeholder="Say something!" aria-label="Artist search"
+            <div class="w-100 search-bar">
+                <div class="input-group mb-3">
+                    <input type="hidden" id="user-id" value={{User.id}}>
+                    <input type="hidden" id="artist-id" value={{id}}>
+                    <input type="text" id="content" class="form-control" placeholder="Say something!" aria-label="Artist search"
                         aria-describedby="button-addon2">
-                    <button class="btn-dark btn-outline-info" type="button" id="button-addon2"><span
+                    <button  class="btn-dark btn-outline-info" type="submit"><span
                             class="text-light">Post</span></button>
                 </div>
             </div>
         </div>
+                            </form>
 
 
         <div class="card bg-light mb-5">
             {{#each Posts}}
-            <div class="card-header">{{post_date}}
-                {{#if UserId === User.id}}
-                <button class="btn-light btn-outline-info" type="button" id="edit-button"><span
-                    class="text-dark">Edit</span></button></div>
-                {{else}}
-                <button class="btn-light btn-outline-info invisible" type="button" id="edit-button"><span
-                    class="text-dark">Edit</span></button></div>
-                {{/if}}
+            <div class="card-header">{{post_date}}</div>
             <div class="card-body">
                 <h5 class="card-title p-2">{{User.username}} says:</h5>
                 <p class="card-text p-2">{{content}}</p>
+                {{#if canDelete}}
+                    <button id="delete-post">Delete</button>
+                    <input type="hidden" id="postID" value={{id}}/>
+                {{/if}}
             </div>
             {{/each}}
-
-
         </div>
 </main>
 
 
 <script src="/js/addPost.js"></script>
+<script src="/js/deletePost.js"></script>
