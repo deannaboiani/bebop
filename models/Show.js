@@ -11,7 +11,7 @@ Show.init({
             isDate:true
         }
     },
-    show_artist: {
+    show_venue: {
         type:DataTypes.STRING,
         allowNull:false
     },

@@ -1,3 +1,7 @@
+main {
+    min-height: 1000px;
+}
+
 #bgimg {
     background-image: url('../images/mainbg.png');
     background-repeat: no-repeat;
@@ -36,6 +40,7 @@
 
 .artist-card h1 {
     position: absolute;
+    text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
