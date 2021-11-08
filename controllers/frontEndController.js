@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { User, Artist, Post, Show } = require("../models");
+const bands = require("./api/bands");
 
 router.get("/", (req, res) => {
   return res.render("home");
@@ -60,7 +61,6 @@ router.get("/artists", (req, res) => {
   });
 });
 
-<<<<<<< HEAD
 router.get("/artists/:id", (req, res) => {
   Artist.findByPk(req.params.id, {
     include: [
@@ -80,30 +80,25 @@ router.get("/artists/:id", (req, res) => {
     console.log(hbsData);
     res.render("artist", hbsData);
   });
-=======
-router.get("/artists", (req, res) => {
-    Artist.findAll().then(artistData => {
-        console.log(artistData)
-        console.log("=================")
-        const hbsAData = artistData.map(item => item.get({ plain: true }))
-        console.log(hbsAData)
-        return res.render("artists/", {
-            flavors: hbsAData
-        })
-    })
-})
-
-router.get("/artists/:id", (req, res) => {
-    Artist.findByPk(req.params.id, {
-        include: [{
-            model: Post,
-            include: [User]
-        }, User]
-    }).then(artistData => {
-        const hbsData = artistData.get({ plain: true })
-        console.log(hbsData);
-        res.render("artist", hbsData);
-    })
->>>>>>> dev
 });
+
+router.post("/artists/search", async (req, res) => {
+  let artist = await bands.getArtist(req.body.name);
+
+  Artist.create({
+    artist_name: artist[0].name,
+    shows: "2021-01-02",
+    image_id: artist[0].img,
+    UserId: req.session.user.id
+  })
+  .then(async newArtist => {
+    const topsix = await Artist.findByPk(newArtist.id);
+    await topsix.addUser(req.session.user.id);
+    res.json(newArtist);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+});
+
 module.exports = router;
