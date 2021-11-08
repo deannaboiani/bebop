@@ -3,6 +3,8 @@ const router = express.Router();
 const { User, Artist, Post, Show } = require("../models");
 const bands = require("./api/bands");
 
+let aid = "";
+
 router.get("/", (req, res) => {
   return res.render("home");
 });
@@ -69,6 +71,7 @@ router.get("/artists/:id", (req, res) => {
         include: [User],
       },
       User,
+      Show
     ],
   }).then((artistData) => {
     const hbsData = artistData.get({ plain: true });
@@ -76,8 +79,8 @@ router.get("/artists/:id", (req, res) => {
       post.canDelete = post.User.username === req.session.user.username;
       return post;
     });
+
     hbsData.User = req.session.user;
-    console.log(hbsData);
     res.render("artist", hbsData);
   });
 });
@@ -93,6 +96,7 @@ router.post("/artists/search", async (req, res) => {
   .then(async newArtist => {
     const topsix = await Artist.findByPk(newArtist.id);
     await topsix.addUser(req.session.user.id);
+    aid = newArtist.id;
     res.json(newArtist);
   })
   .catch(err => {
@@ -100,20 +104,23 @@ router.post("/artists/search", async (req, res) => {
   });
 });
 
-router.post("/artists/events", async (req, res) => {
+router.post("/artists/shows", async (req, res) => {
   let events = await bands.getEvents(req.body.name);
-  console.log(events);
-  Show.create({
-    show_date: event.datetime,
-    show_venue: event.venue.name,
-    show_location: event.venue.location
-  })
-  .then(async newEvent => {
-    res.json(newEvent);
-  })
-  .catch(err => {
-    console.log(err);
+
+  events.forEach((event) => {
+      Show.create({
+      show_date: event.date,
+      show_venue: event.venue,
+      show_location: event.location,
+      ArtistId: aid,
+      UserId: req.session.user.id
+    })
+    .catch(err => {
+      console.log(err);
+    });
   });
+
+  res.json(events);
 });
 
 module.exports = router;

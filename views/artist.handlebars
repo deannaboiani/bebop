@@ -2,7 +2,7 @@
     <div class="d-flex justify-content-center align-items-center pt-5">
         <h5 class="fs-1 fw-bold">{{artist_name}}</h5>
     </div>
-  
+
     <div class="w-75 center py-5">
         <div>
             <a href="#">
@@ -13,30 +13,32 @@
     <div class="d-flex flex-column justify-content-center my-3 p-5">
         <div class="w-100 fw-bold fs-2 text-center text-light mb-3">Upcoming Shows:</div>
         <div class="w-100">
-            <div class="d-flex flex-row align-items-center justify-content-center">
-                {{#each Show}}
-                <p class="pt-3 pe-5">{{show_date show_venue show_location}}</p>
-                {{/each}}
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                {{#each Shows}}
+                <div class="pt-3 pe-5">
+                    <p>{{show_date}} - {{show_venue}} - {{show_location}}</p>
                 </div>
+                {{/each}}
             </div>
         </div>
     </div>
+    </div>
     <div class="d-flex flex-column justify-content-center py-5 text-dark text-center w-75 center">
         <div class="w-100 fw-bold fs-2 text-center text-light mb-3">Comments:</div>
-                    <form id="add-post">
-        <div class="m-5">
-            <div class="w-100 search-bar">
-                <div class="input-group mb-3">
-                    <input type="hidden" id="user-id" value={{User.id}}>
-                    <input type="hidden" id="artist-id" value={{id}}>
-                    <input type="text" id="content" class="form-control" placeholder="Say something!" aria-label="Artist search"
-                        aria-describedby="button-addon2">
-                    <button  class="btn-dark btn-outline-info" type="submit"><span
-                            class="text-light">Post</span></button>
+        <form id="add-post">
+            <div class="m-5">
+                <div class="w-100 search-bar">
+                    <div class="input-group mb-3">
+                        <input type="hidden" id="user-id" value={{User.id}}>
+                        <input type="hidden" id="artist-id" value={{id}}>
+                        <input type="text" id="content" class="form-control" placeholder="Say something!"
+                            aria-label="Artist search" aria-describedby="button-addon2">
+                        <button class="btn-dark btn-outline-info" type="submit"><span
+                                class="text-light">Post</span></button>
+                    </div>
                 </div>
             </div>
-        </div>
-                            </form>
+        </form>
 
 
         <div class="card bg-light mb-5">
@@ -46,8 +48,8 @@
                 <h5 class="card-title p-2">{{User.username}} says:</h5>
                 <p class="card-text p-2">{{content}}</p>
                 {{#if canDelete}}
-                    <button id="delete-post">Delete</button>
-                    <input type="hidden" id="postID" value={{id}}/>
+                <button id="delete-post">Delete</button>
+                <input type="hidden" id="postID" value={{id}} />
                 {{/if}}
             </div>
             {{/each}}
