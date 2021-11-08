@@ -6,7 +6,9 @@ const API_KEY = process.env.API_KEY;
 // Method that returns information about an artist given a name
 const getArtist = async (name) => {
     try {
-        const resp = await axios.get("https://rest.bandsintown.com/artists/" + name + "/?app_id=" + API_KEY);
+        const url = "https://rest.bandsintown.com/artists/" + name + "/?app_id=" + API_KEY;
+
+        const resp = await axios.get(url);
         let data = resp.data;
         let result = [];
 
