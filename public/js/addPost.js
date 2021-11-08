@@ -17,7 +17,7 @@ document.querySelector("#add-post").addEventListener("submit", (evt) => {
       if (res.ok) {
         location.href = `/artists/${fetchObj.ArtistId}`;
       } else {
-        alert("Oops");
+        alert("Post wasn't added");
       }
     });
   });
