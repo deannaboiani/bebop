@@ -1,32 +1,30 @@
 const express = require('express');
 const router = express.Router();
-const {User,Artist,Post,Show}  = require("../models")
+const { User, Artist, Post, Show } = require("../models")
 
-router.get('/',(req,res)=>{
+router.get('/', (req, res) => {
     return res.render("home")
 });
 
-router.get("/signup",(req,res)=>{
+router.get("/signup", (req, res) => {
     // if(req.session.user){
     //     return res.redirect(`/profile/${req.session.user.id}`)
     // }
-   return  res.render("signup")
+    return res.render("signup")
 })
 
-
-router.get("/login",(req,res)=>{
-    if(req.session.user){
+router.get("/login", (req, res) => {
+    if (req.session.user) {
         return res.redirect(`/profile/${req.session.user.id}`)
     }
-   return  res.render("login")
+    return res.render("login")
 })
 
-
-router.get("/profile",(req,res)=>{
-    if(req.session.user){
+router.get("/profile", (req, res) => {
+    if (req.session.user) {
         return res.redirect(`/profile/${req.session.user.id}`)
     }
-   return  res.render("login")
+    return res.render("login")
 })
 
 router.get("/logout", (req, res) => {
@@ -35,41 +33,41 @@ router.get("/logout", (req, res) => {
 })
 
 router.get("/profile/:id", (req, res) => {
-    User.findByPk(req.params.id,{
-        include:[{
-            model:Show,
-            include:[Artist]
-        },Artist]
-    }).then(userData=>{
-        const hbsData = userData.get({plain:true})
+    User.findByPk(req.params.id, {
+        include: [{
+            model: Show,
+            include: [Artist]
+        }, Artist]
+    }).then(userData => {
+        const hbsData = userData.get({ plain: true })
         console.log(hbsData);
-        res.render("profile",hbsData);
+        res.render("profile", hbsData);
     })
 });
 
 
-router.get("/artists",(req,res)=>{
-    Artist.findAll().then(artistData=>{
+router.get("/artists", (req, res) => {
+    Artist.findAll().then(artistData => {
         console.log(artistData)
         console.log("=================")
-        const hbsAData = artistData.map(item=>item.get({plain:true}))
+        const hbsAData = artistData.map(item => item.get({ plain: true }))
         console.log(hbsAData)
-        return res.render("artists/",{
-            flavors:hbsAData
+        return res.render("artists/", {
+            flavors: hbsAData
         })
     })
 })
 
-router.get("/artists/:id",(req,res)=>{
-    Artist.findByPk(req.params.id,{
-        include:[{
-            model:Post,
-            include:[User]
-        },User]
-    }).then(artistData=>{
-        const hbsData = artistData.get({plain:true})
+router.get("/artists/:id", (req, res) => {
+    Artist.findByPk(req.params.id, {
+        include: [{
+            model: Post,
+            include: [User]
+        }, User]
+    }).then(artistData => {
+        const hbsData = artistData.get({ plain: true })
         console.log(hbsData);
-        res.render("artist",hbsData);
+        res.render("artist", hbsData);
     })
 });
 module.exports = router;

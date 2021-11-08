@@ -10,5 +10,8 @@ router.use("/posts",postRoutes);
 const profileRoutes = require("./profileRoutes");
 router.use("/profiles", profileRoutes);
 
+const bandsRoutes = require("./bands2");
+router.use("/bands", bandsRoutes)
+
 
 module.exports = router;
