@@ -18,9 +18,9 @@ const getArtist = async (name) => {
         });
 
         return result;
-    } catch(err) {
+    } catch (err) {
         console.log(err);
-    } 
+    }
 }
 
 // Method that returns a list of locations and times that an artist will be performing
@@ -33,12 +33,13 @@ const getEvents = async (name) => {
         data.forEach(event => {
             result.push({
                 date: event.datetime,
+                venue: event.venue.name,
                 location: event.venue.location
             });
         });
 
-        return result;
-    } catch(err) {
+        return result.slice(0, 3);
+    } catch (err) {
         console.log(err);
     }
 }

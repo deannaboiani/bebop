@@ -87,7 +87,6 @@ router.post("/artists/search", async (req, res) => {
 
   Artist.create({
     artist_name: artist[0].name,
-    shows: "2021-01-02",
     image_id: artist[0].img,
     UserId: req.session.user.id
   })
@@ -95,6 +94,22 @@ router.post("/artists/search", async (req, res) => {
     const topsix = await Artist.findByPk(newArtist.id);
     await topsix.addUser(req.session.user.id);
     res.json(newArtist);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+});
+
+router.post("/artists/events", async (req, res) => {
+  let events = await bands.getEvents(req.body.name);
+  console.log(events);
+  Show.create({
+    show_date: event.datetime,
+    show_venue: event.venue.name,
+    show_location: event.venue.location
+  })
+  .then(async newEvent => {
+    res.json(newEvent);
   })
   .catch(err => {
     console.log(err);

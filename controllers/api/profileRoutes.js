@@ -19,7 +19,7 @@ router.get("/:id", (req, res) => {
         if(user) {
             res.json(user);
         } else {
-            res.status(404).json({err: "No just profile found!"});
+            res.status(404).json({err: "No such profile found!"});
         }
     })
     .catch(err => {
