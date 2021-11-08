@@ -14,8 +14,8 @@
         <div class="w-100 fw-bold fs-2 text-center text-light mb-3">Upcoming Shows:</div>
         <div class="w-100">
             <div class="d-flex flex-row align-items-center justify-content-center">
-                {{#each Artists}}
-                <p class="pt-3 pe-5">{{Show.show_date}}</p>
+                {{#each Shows}}
+                <p class="pt-3 pe-5">{{show_date}} {{show_location}} {{show_venue}}</p>
                 {{/each}}
             </div>
         </div>

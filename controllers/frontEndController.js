@@ -71,6 +71,7 @@ router.get("/artists/:id", (req, res) => {
         include: [User],
       },
       User,
+      Show
     ],
   }).then((artistData) => {
     const hbsData = artistData.get({ plain: true });
@@ -78,8 +79,8 @@ router.get("/artists/:id", (req, res) => {
       post.canDelete = post.User.username === req.session.user.username;
       return post;
     });
+
     hbsData.User = req.session.user;
-    console.log(hbsData);
     res.render("artist", hbsData);
   });
 });
@@ -105,8 +106,6 @@ router.post("/artists/search", async (req, res) => {
 
 router.post("/artists/shows", async (req, res) => {
   let events = await bands.getEvents(req.body.name);
-  console.log("EVENTS: #####################");
-  console.log(events);
 
   events.forEach((event) => {
       Show.create({
