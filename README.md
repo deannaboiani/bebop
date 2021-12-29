@@ -30,14 +30,14 @@ Visit the app [here!](https://bebopmusic.herokuapp.com/)
 ![Artist Mobile](./public/screenshots/artist-mobile-ss.png)
 
 ## Contributing
-To contribute, contact us below!
+To contribute, contact me below!
 
 ## License
 This application is covered under the MIT License
 
 ## Links
 [Repository](https://github.com/deannaboiani/bebop)  
-[Deployed App](https://bebopmusic.herokuapp.com/)
+[Deployed App](https://bebop-music.herokuapp.com/)
 
 ## Questions
 If you have any questions, please visit my Github profile or email me using the links below
