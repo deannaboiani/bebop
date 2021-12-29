@@ -64,35 +64,38 @@ main {
     opacity: .5;
 }
 
-.artist-card .remove-icon {
+.artist-card #remove-icon {
     position: absolute;
-    top: 1%;
+    top: 0;
     right: 1%;
     padding: 2%;
-    opacity: .6;
-    color: red;
+    opacity: .4;
+    color: transparent;
+    text-shadow: 0 0 #cd2127;
     font-size: 12px;
     cursor: pointer;
     display: none;
 }
 
-.artist-card:hover .remove-icon {
+.artist-card:hover #remove-icon {
     display: block;
 }
 
-.remove-icon:hover {
+#remove-icon:hover {
     opacity: 1;
 }
 
 @media only screen and (max-width: 375px) {
-    .artist-card .remove-icon {
+    .artist-card #remove-icon {
         display: block;
         font-size: 24px;
         padding: 5%;
     }
+
     .artist-card .profile-img {
         opacity: .5;
     }
+
     .artist-card h1 {
         display: block;
     }

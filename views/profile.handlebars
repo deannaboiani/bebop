@@ -8,8 +8,8 @@
         </div>
         <div class="mw-100 center" style="width: 30rem;">
             <div class="input-group mb-3 px-4">
-                <input id="artist-search" type="text" class="form-control" placeholder="Favorite artist" aria-label="Artist search"
-                    aria-describedby="button-addon2">
+                <input id="artist-search" type="text" class="form-control" placeholder="Favorite artist"
+                    aria-label="Artist search" aria-describedby="button-addon2">
                 <button class="btn btn-outline-success" type="button" id="button-addon2"><span
                         class="text-light">Add</span></button>
             </div>
@@ -20,10 +20,11 @@
         <div class="col-md-4 p-2">
             <div class="artist-card">
                 <a href="/artists/{{id}}">
-                    <img class="profile-img" src={{image_id}} alt="artist">
+                    <img class=" profile-img" src={{image_id}} alt="artist">
                     <h1>{{artist_name}}</h1>
                 </a>
-                {{!-- <span class="remove-icon">&#10060;</span> --}}
+                <i id="remove-icon">❌</i>
+                <input type="hidden" id="delete-artist" value={{id}} />
             </div>
         </div>
         {{/each}}
